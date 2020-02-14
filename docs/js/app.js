@@ -3,7 +3,7 @@ import api from './modules/api.js';
 import routie from './modules/router.js';
 
 routie({
-    'recent': function() {
+    '': function() {
           render.loading();
 
           fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=nathankeyzer&api_key=558413ce30002869acf1d2e2d9c2047b&format=json&page=1')
