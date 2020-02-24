@@ -29,7 +29,7 @@ routie({
     'detail': function(){
         render.loading();
 
-        fetch('http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=558413ce30002869acf1d2e2d9c2047b&artist=' + artist +' &track='+ track +'&format=json')
+        fetch('https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=558413ce30002869acf1d2e2d9c2047b&artist=' + artist +' &track='+ track +'&format=json')
            .then(function(response) {
               return response.json();
             })
@@ -40,7 +40,7 @@ routie({
     },
     'detail/:artist/:track': function(artist, track){
         console.log(artist + " "+ track);
-        fetch('http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=558413ce30002869acf1d2e2d9c2047b&artist=' + artist + '&track=' + track + '&format=json')
+        fetch('https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=558413ce30002869acf1d2e2d9c2047b&artist=' + artist + '&track=' + track + '&format=json')
         .then (function(response){
             return response.json();
         })
