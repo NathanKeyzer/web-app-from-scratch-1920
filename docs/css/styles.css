@@ -40,6 +40,10 @@ section {
   border-radius: 1rem;
   background-color: white;
   margin: 0 1em 1em 0;
+  height: 10.875rem;
+}
+section.detail{
+    height: auto;
 }
 .nowPlaying:first-of-type {
   animation: pulse 3s infinite;

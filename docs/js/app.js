@@ -1,31 +1,14 @@
 import render from './modules/render.js';
-import api from './modules/api.js';
+import apiCall from './modules/api.js';
 import routie from './modules/router.js';
 
+// Import pages
+import home from './views/home.js'
+import top from './views/top.js'
+
 routie({
-    '': function() {
-          render.loading();
-
-          fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=nathankeyzer&api_key=558413ce30002869acf1d2e2d9c2047b&format=json&page=1')
-             .then(function(response) {
-                return response.json();
-              })
-              .then(function(json) {
-                render.songList(json)
-                render.currentUser(json)
-              });
-    },
-    'top': function() {
-        render.loading();
-
-        fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=nathankeyzer&api_key=558413ce30002869acf1d2e2d9c2047b&format=json')
-           .then(function(response) {
-              return response.json();
-            })
-            .then(function(json) {
-              render.topTracks(json)
-            });
-    },
+    '': home,
+    'top': top,
     'detail': function(){
         render.loading();
 
@@ -49,6 +32,27 @@ routie({
         });
     }
 });
+// 
+// // making url
+//     const endpoint = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks';
+//     const user = 'nathankeyzer';
+//     const key = '558413ce30002869acf1d2e2d9c2047b';
+//     //https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=nathankeyzer&api_key=558413ce30002869acf1d2e2d9c2047b&format=json
+//     const url = `${endpoint}&user=${user}&api_key=${key}&format=json&page=1`;
+//     const endpoint2 = 'https://ws.audioscrobbler.com/2.0/?method=track.getInfo';
+//     const url2 = `${endpoint2}&api_key=${key}&artist= &track= &format=json`
+// function recent() {
+//     fetch(url)
+//     .then(function(response){
+//         return response.json();
+//     })
+//     .then(function(json){
+//         render.songList(json)
+//     });
+// }
+//test
+
+
 // (() => {
 //   'use strict';
 //   // Start Promise
