@@ -2,7 +2,7 @@
 
 ## My web App
 
-[Application link](https://nathankeyzer.github.io/web-app-from-scratch-1920/)
+[Application link](https://nathankeyzer.github.io/web-app-from-scratch-1920/?user=nathankeyzer)
 
 ![Application](https://github.com/NathanKeyzer/web-app-from-scratch-18-19/blob/master/week1/public/img/application.png?raw=true)
 
